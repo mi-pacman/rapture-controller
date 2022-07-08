@@ -1,4 +1,4 @@
-# Dockerfile that installs terraform, packer and aws-cli
+# Dockerfile that installs Terraform
 
 FROM alpine:edge
 
