@@ -1,9 +1,9 @@
 # Terraform Controller
 alias poweron-tc='sudo docker run --name terraform_controller -h terraformController -d -p 2222:22 pacman369/rapture:terraform-controller'
-alias connect-tc='ssh -p 2222 pacman@terraformController'
+alias connect-tc='ssh -p 2222 pacman@localhost'
 alias poweroff-tc='sudo docker stop terraform_controller && sudo docker rm terraform_controller'
 
 # Packer Controller
 alias poweron-pc='sudo docker run --name packer_controller -h packerController -d -p 2223:22 pacman369/rapture:packer-controller'
-alias connect-pc='ssh -p 2223 pacman@packerController'
+alias connect-pc='ssh -p 2223 pacman@localhost'
 alias poweroff-pc='sudo docker stop packer_controller && sudo docker rm packer_controller'
