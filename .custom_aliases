@@ -1,0 +1,3 @@
+alias poweron-tc='sudo docker run --name terraform_controller -h terraform-controller -d -p 2222:22 pacman369/rapture:terraform-controller'
+alias connect-tc='ssh -p 2222 pacman@localhost'
+alias poweroff-tc='sudo docker stop terraform_controller && sudo docker rm terraform_controller'
