@@ -159,15 +159,15 @@ fi
 ##########################
 ###Terraform Controller###
 ##########################
-alias poweron-tc='sudo docker run --name terraform_controller -h terraformController -v /home/vagrant/rapture-controller/provisioner:/home/pacman -d -p 2222:22 midockerdb/terraform-controller:0.1.0'
-alias connect-tc='ssh -p 2222 pacman@localhost'
+alias poweron-tc='sudo docker run --name terraform_controller -h terraformController -v /home/vagrant/rapture-controller/provisioner:/home/root -d -p 2222:22 midockerdb/terraform-controller:0.1.0'
+alias connect-tc='ssh -p 2222 root@localhost'
 alias poweroff-tc='sudo docker stop terraform_controller && sudo docker rm terraform_controller'
 
 #######################
 ###Packer Controller###
 #######################
-alias poweron-pc='sudo docker run --name packer_controller -h packerController -v /home/vagrant/rapture-controller/provisioner:/home/pacman -d -p 2223:22 midockerdb/packer-controller:0.1.0'
-alias connect-pc='ssh -p 2223 pacman@localhost'
+alias poweron-pc='sudo docker run --name packer_controller -h packerController -v /home/vagrant/rapture-controller/provisioner:/home/root -d -p 2223:22 midockerdb/packer-controller:0.1.0'
+alias connect-pc='ssh -p 2223 root@localhost'
 alias poweroff-pc='sudo docker stop packer_controller && sudo docker rm packer_controller'
 
 
