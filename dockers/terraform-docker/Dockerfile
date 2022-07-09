@@ -12,6 +12,10 @@ RUN mv terraform /usr/bin/terraform
 
 RUN apk del curl
 
+RUN sed -i 's/#PermitRootLogin\sprohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config                                                                                     
+
+RUN echo 'root:changeme' | chpasswd
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd","-D"]
