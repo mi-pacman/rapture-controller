@@ -12,7 +12,10 @@ git clone --depth=1 https://github.com/mi-pacman/vimrc.git ~/.vim_runtime
 git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy 
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-sudo cp -r .vim_runtime/ .vimrc .tmux.conf /etc/skel
+# Install Composer
+sudo apt install php-cli unzip
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Setup sudo to allow no-password sudo for "hashicorp" group and adding "terraform" user
 sudo groupadd -r hashicorp
