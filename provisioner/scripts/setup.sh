@@ -9,8 +9,7 @@ sudo apt-get -y -qq install tmux curl wget git vim apt-transport-https ca-certif
 
 # Configure Vim and Tmux for user default ubuntu
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git ~/.vim_runtime
-git clone https://github.com/mi-pacman/rapture-controller ~/rapture-controller
-cp ~/rapture-controller/.tmux.conf ~/.tmux.conf 
+git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy 
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 sudo cp -r .vim_runtime/ .vimrc .tmux.conf /etc/skel
