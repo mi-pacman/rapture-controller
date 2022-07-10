@@ -7,13 +7,14 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confd
 sudo apt-get update
 sudo apt-get -y -qq install tmux curl wget git vim apt-transport-https ca-certificates docker.io
 
+
 # Configure Vim and Tmux for user default ubuntu
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git ~/.vim_runtime
 git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy 
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Install Composer
-sudo apt install php-cli unzip
+sudo apt install -y php7.4-cli
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
