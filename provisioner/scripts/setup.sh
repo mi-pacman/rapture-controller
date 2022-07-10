@@ -21,6 +21,8 @@ sudo apt install -y php8.1
 sudo apt install -y php-xml php-curl zip unzip
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+sudo systemctl stop apache2
+sudo systemctl disable apache2
 
 # Setup sudo to allow no-password sudo for "hashicorp" group and adding "terraform" user
 sudo groupadd -r hashicorp
