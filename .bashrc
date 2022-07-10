@@ -159,13 +159,13 @@ fi
 ##########################
 ###Terraform Controller###
 ##########################
-alias poweron-tc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/instances:/root --name terraform_controller -h terraformController -d -p 2222:22 midockerdb/terraform-controller:0.1.1'
+alias poweron-tc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/instances:/root/instances:ro --name terraform_controller -h terraformController -d -p 2222:22 midockerdb/terraform-controller:0.1.2'
 alias connect-tc='ssh -p 2222 root@localhost'
 alias poweroff-tc='sudo docker stop terraform_controller && sudo docker rm terraform_controller'
 
 #######################
 ###Packer Controller###
 #######################
-alias poweron-pc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/images:/root:ro -v /home/vagrant/rapture-proxy/provisioner/scripts:/root:ro --name packer_controller -h packerController -v /home/vagrant/rapture-proxy/provisioner:/root -d -p 2223:22 midockerdb/packer-controller:0.1.1'
+alias poweron-pc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/images:/root/images:ro -v /home/vagrant/rapture-proxy/provisioner/scripts:/root/scripts:ro --name packer_controller -h packerController -d -p 2223:22 midockerdb/packer-controller:0.1.2'
 alias connect-pc='ssh -p 2223 root@localhost'
 alias poweroff-pc='sudo docker stop packer_controller && sudo docker rm packer_controller'
