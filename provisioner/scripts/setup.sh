@@ -5,7 +5,7 @@ set -x
 sudo apt update
 sudo apt upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-sudo apt install -y -qq tmux curl wget git vim apt-transport-https ca-certificates docker.io
+sudo apt install -y -qq tmux curl wget git vim apt-transport-https ca-certificates docker.io docker-compose
 
 
 # Configure Vim and Tmux for user default ubuntu
