@@ -12,6 +12,7 @@ sudo apt-get -y -qq install tmux curl wget git vim apt-transport-https ca-certif
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git ~/.vim_runtime
 git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy 
 sh ~/.vim_runtime/install_awesome_vimrc.sh
+sudo echo "ubuntu:changeme" | sudo chpasswd
 
 # Install Composer
 sudo apt install -y php7.4-cli
