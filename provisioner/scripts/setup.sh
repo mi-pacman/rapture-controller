@@ -2,10 +2,10 @@
 set -x
 
 # Install necessary dependencies
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt update
+sudo apt upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-sudo apt-get -y -qq install tmux curl wget git vim apt-transport-https ca-certificates docker.io
+sudo apt install -y -qq tmux curl wget git vim apt-transport-https ca-certificates docker.io
 
 
 # Configure Vim and Tmux for user default ubuntu
@@ -16,8 +16,9 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Install Composer & PHP
 sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt install php8.1 -y php-xml zip unzip php-curl
+sudo apt update
+sudo apt install -y php8.1 
+sudo apt install php-xml php-curl zip unzip
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
