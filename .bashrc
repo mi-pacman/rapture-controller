@@ -159,7 +159,7 @@ fi
 ##########################
 ###Terraform Controller###
 ##########################
-alias poweron-tc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/instances:/root/instances:ro --name terraform_controller -h terraformController -d -p 2222:22 midockerdb/terraform-controller:0.1.2'
+alias poweron-tc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/instances:/root/instances --name terraform_controller -h terraformController -d -p 2222:22 midockerdb/terraform-controller:0.1.2'
 alias connect-tc='ssh -p 2222 root@localhost'
 alias poweroff-tc='sudo docker stop terraform_controller && sudo docker rm terraform_controller'
 
