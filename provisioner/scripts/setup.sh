@@ -15,7 +15,9 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 #sudo echo "ubuntu:changeme" | chpasswd
 
 # Install Composer & PHP
-sudo apt install -y php php-xml zip unzip
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt install php8.1 -y php-xml zip unzip php-curl
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
