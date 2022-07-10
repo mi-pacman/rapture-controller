@@ -2,7 +2,7 @@
 set -x
 
 # Install necessary dependencies
-sudo apt-get update -y
+sudo apt-get update -y && && sudo apt-get upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 sudo apt-get update
 sudo apt-get -y -qq install tmux curl wget git vim apt-transport-https ca-certificates docker.io
@@ -14,8 +14,8 @@ git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 sudo echo "ubuntu:changeme" | sudo chpasswd
 
-# Install Composer
-sudo apt install -y php7.4-cli
+# Install Composer & PHP
+sudo apt install -y php php-xml
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
