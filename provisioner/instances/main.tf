@@ -66,7 +66,7 @@ resource "aws_security_group" "sg_80" {
   name   = "sg_22"
   vpc_id = aws_vpc.vpc.id
 
-  # SSH access from the VPC
+  # HTTP access from the VPC
   ingress {
     from_port   = 80
     to_port     = 80
@@ -75,7 +75,6 @@ resource "aws_security_group" "sg_80" {
   }
  
   }
-
   egress {
     from_port   = 0
     to_port     = 0
