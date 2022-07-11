@@ -173,6 +173,6 @@ alias poweroff-pc='sudo docker stop packer_controller && sudo docker rm packer_c
 #Generate SSH Key
 alias generate-key='ssh-keygen -t ed25519 -f /home/vagrant/rapture-proxy/provisioner/images/tf-packer'
 
-#Connect to cloud instance
-alias fetchoutputipraw='sudo docker exec -it terraform_controller terraform output --state /root/instances/terraform.tfstate public_ip'
-alias fetchoutputip="fetchoutputipraw | sed 's/\"//g'"
+#Fetch terraform public_ip output from container
+alias terraformipraw='sudo docker exec -it terraform_controller terraform output --state /root/instances/terraform.tfstate public_ip'
+alias terraformip="terraformipraw | sed 's/\"//g'"  # Removes "" from output
