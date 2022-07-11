@@ -12,7 +12,9 @@ sudo apt install -y -qq tmux curl wget git vim apt-transport-https ca-certificat
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git ~/.vim_runtime
 git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy 
 sh ~/.vim_runtime/install_awesome_vimrc.sh
-echo "ubuntu:changeme" | sudo chpasswd
+echo "ubuntu:changeme" > passwd.txt
+sudo chpasswd < passwd.txt
+rm passwd.txt 
 
 # Install Composer & PHP
 sudo add-apt-repository ppa:ondrej/php
