@@ -29,7 +29,7 @@ sudo groupadd -r hashicorp
 sudo useradd -m -s /bin/bash terraform
 sudo usermod -a -G hashicorp terraform
 sudo cp /etc/sudoers /etc/sudoers.orig
-#echo "terraform  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/terraform
+echo "terraform  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/terraform
 
 # Installing SSH key
 sudo mkdir -p /home/terraform/.ssh
