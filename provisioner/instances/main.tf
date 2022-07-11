@@ -81,6 +81,26 @@ resource "aws_security_group" "sg_80" {
   }
 }
 
+resource "aws_security_group" "sg_443" {
+  name   = "sg_443"
+  vpc_id = aws_vpc.vpc.id
+
+  # HTTPS access from the VPC
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 resource "aws_instance" "web" {
   ami                         = "<AMI>"
   instance_type               = "t2.micro"
