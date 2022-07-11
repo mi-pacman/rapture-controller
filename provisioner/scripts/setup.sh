@@ -14,6 +14,13 @@ sudo usermod -a -G hashicorp terraform
 sudo cp /etc/sudoers /etc/sudoers.orig
 echo "terraform  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/terraform
 
+# Installing SSH key
+sudo mkdir -p /home/terraform/.ssh
+sudo chmod 700 /home/terraform/.ssh
+sudo cp /tmp/tf-packer.pub /home/terraform/.ssh/authorized_keys
+sudo chmod 600 /home/terraform/.ssh/authorized_keys
+sudo chown -R terraform /home/terraform/.ssh
+
 # Configure Vim and Tmux for user default ubuntu
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git ~/.vim_runtime
 git clone https://github.com/mi-pacman/rapture-proxy ~/rapture-proxy 
@@ -28,12 +35,3 @@ curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 sudo systemctl stop apache2
 sudo systemctl disable apache2
-
-
-
-# Installing SSH key
-sudo mkdir -p /home/terraform/.ssh
-sudo chmod 700 /home/terraform/.ssh
-sudo cp /tmp/tf-packer.pub /home/terraform/.ssh/authorized_keys
-sudo chmod 600 /home/terraform/.ssh/authorized_keys
-sudo chown -R terraform /home/terraform/.ssh
