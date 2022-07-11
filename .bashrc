@@ -166,7 +166,7 @@ alias poweroff-tc='sudo docker stop terraform_controller && sudo docker rm terra
 #######################
 ###Packer Controller###
 #######################
-alias poweron-pc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/images:/root/images:ro -v /home/vagrant/rapture-proxy/provisioner/scripts:/root/scripts:ro --name packer_controller -h packerController -d -p 2223:22 midockerdb/packer-controller:0.1.2'
+alias poweron-pc='sudo docker run -v /home/vagrant/.aws/credentials:/root/.aws/credentials:ro -v /home/vagrant/rapture-proxy/provisioner/images:/root/images:ro --name packer_controller -h packerController -d -p 2223:22 midockerdb/packer-controller:0.1.2'
 alias connect-pc='ssh -p 2223 root@localhost'
 alias poweroff-pc='sudo docker stop packer_controller && sudo docker rm packer_controller'
 
