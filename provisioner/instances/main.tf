@@ -62,7 +62,7 @@ resource "aws_security_group" "sg_22" {
 }
 
 resource "aws_security_group" "sg_80" {
-  name   = "sg_8000"
+  name   = "sg_80"
   vpc_id = aws_vpc.vpc.id
 
   # HTTP access from the VPC
