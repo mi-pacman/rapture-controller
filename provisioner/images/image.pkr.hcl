@@ -34,6 +34,6 @@ build {
     destination = "/tmp/tf-packer.pub"
   }
   provisioner "shell" {
-    script = "./setup.sh"
+    script = "setup.sh"
   }
 }
