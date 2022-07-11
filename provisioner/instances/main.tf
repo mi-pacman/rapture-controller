@@ -53,7 +53,6 @@ resource "aws_security_group" "sg_22" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   
-  }
   egress {
     from_port   = 0
     to_port     = 0
@@ -63,7 +62,7 @@ resource "aws_security_group" "sg_22" {
 }
 
 resource "aws_security_group" "sg_80" {
-  name   = "sg_22"
+  name   = "sg_80"
   vpc_id = aws_vpc.vpc.id
 
   # HTTP access from the VPC
@@ -82,7 +81,6 @@ resource "aws_security_group" "sg_80" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 
 resource "aws_instance" "web" {
   ami                         = "<AMI>"
