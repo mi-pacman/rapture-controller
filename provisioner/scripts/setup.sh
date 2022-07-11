@@ -5,7 +5,7 @@ set -x
 sudo apt update
 sudo apt upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-sudo apt install -y -qq tmux curl wget git vim apt-transport-https ca-certificates docker.io docker-compose
+sudo apt install -y -qq tmux curl wget git vim apt-transport-https ca-certificates docker.io
 
 
 # Configure Vim and Tmux for user default ubuntu
@@ -18,7 +18,7 @@ echo "ubuntu:changeme" | sudo chpasswd
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install -y php8.1 
-sudo apt install -y php-xml php-curl zip unzip
+sudo apt install -y php-xml php-curl zip unzip docker-compose
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 sudo systemctl stop apache2
