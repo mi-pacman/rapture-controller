@@ -68,7 +68,7 @@ resource "aws_security_group" "sg_80" {
   # HTTP access from the VPC
   ingress {
     from_port   = 80
-    to_port     = 80
+    to_port     = 8000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -89,7 +89,7 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
 
   tags = {
-    Name = "Control Server"
+    Name = "Cloud Controller"
   }
 }
 
