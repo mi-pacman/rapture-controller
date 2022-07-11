@@ -21,9 +21,11 @@ sudo cp /tmp/tf-packer.pub /home/terraform/.ssh/authorized_keys
 sudo chmod 600 /home/terraform/.ssh/authorized_keys
 sudo chown -R terraform /home/terraform/.ssh
 
-# Configure Vim and Tmux for user default ubuntu
+# Install Vim, configure traefik proxy
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git /home/terraform/.vim_runtime
-git clone https://github.com/mi-pacman/rapture-proxy && mv rapture-proxy/ /home/terraform
+git clone https://github.com/mi-pacman/rapture-proxy
+sudo mkdir /etc/traefik
+sudo cp ~/rapture-proxy/.traefik.yml /etc/traefik/traefik.yml 
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Install Composer & PHP
@@ -35,3 +37,4 @@ curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 sudo systemctl stop apache2
 sudo systemctl disable apache2
+
