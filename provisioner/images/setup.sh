@@ -23,7 +23,7 @@ sudo chown -R terraform /home/terraform/.ssh
 
 # Configure Vim and Tmux for user default ubuntu
 git clone --depth=1 https://github.com/mi-pacman/vimrc.git /home/terraform/.vim_runtime
-git clone https://github.com/mi-pacman/rapture-proxy /home/terraform/rapture-proxy 
+git clone https://github.com/mi-pacman/rapture-proxy && mv rapture-proxy/ /home/terraform
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Install Composer & PHP
